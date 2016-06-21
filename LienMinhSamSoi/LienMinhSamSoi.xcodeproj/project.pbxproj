@@ -101,7 +101,10 @@
 		84EA888F1D17D677008B3B9F /* icon_rank.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EA888E1D17D677008B3B9F /* icon_rank.png */; };
 		84EA88921D17E2E1008B3B9F /* ListRankTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EA88911D17E2E1008B3B9F /* ListRankTableViewCell.m */; };
 		84EA88951D17F421008B3B9F /* LoLListRankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EA88941D17F421008B3B9F /* LoLListRankModel.m */; };
-		84EA88991D17FB3F008B3B9F /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EA88981D17FB3F008B3B9F /* NIDropDown.m */; };
+		CC0011021D191E6E003FFBDA /* CarbonSwipeRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0010FB1D191E6E003FFBDA /* CarbonSwipeRefresh.m */; };
+		CC0011031D191E6E003FFBDA /* CarbonTabSwipeNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0010FD1D191E6E003FFBDA /* CarbonTabSwipeNavigation.m */; };
+		CC0011041D191E6E003FFBDA /* CarbonTabSwipeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0010FF1D191E6E003FFBDA /* CarbonTabSwipeScrollView.m */; };
+		CC0011051D191E6E003FFBDA /* CarbonTabSwipeSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0011011D191E6E003FFBDA /* CarbonTabSwipeSegmentedControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -286,9 +289,16 @@
 		84EA88911D17E2E1008B3B9F /* ListRankTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListRankTableViewCell.m; sourceTree = "<group>"; };
 		84EA88931D17F421008B3B9F /* LoLListRankModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoLListRankModel.h; sourceTree = "<group>"; };
 		84EA88941D17F421008B3B9F /* LoLListRankModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoLListRankModel.m; sourceTree = "<group>"; };
-		84EA88971D17FB3F008B3B9F /* NIDropDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIDropDown.h; sourceTree = "<group>"; };
-		84EA88981D17FB3F008B3B9F /* NIDropDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIDropDown.m; sourceTree = "<group>"; };
 		87AA7390E151E841AAF300AB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC0010F91D191E6E003FFBDA /* CarbonKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarbonKit.h; sourceTree = "<group>"; };
+		CC0010FA1D191E6E003FFBDA /* CarbonSwipeRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarbonSwipeRefresh.h; sourceTree = "<group>"; };
+		CC0010FB1D191E6E003FFBDA /* CarbonSwipeRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonSwipeRefresh.m; sourceTree = "<group>"; };
+		CC0010FC1D191E6E003FFBDA /* CarbonTabSwipeNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarbonTabSwipeNavigation.h; sourceTree = "<group>"; };
+		CC0010FD1D191E6E003FFBDA /* CarbonTabSwipeNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonTabSwipeNavigation.m; sourceTree = "<group>"; };
+		CC0010FE1D191E6E003FFBDA /* CarbonTabSwipeScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarbonTabSwipeScrollView.h; sourceTree = "<group>"; };
+		CC0010FF1D191E6E003FFBDA /* CarbonTabSwipeScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonTabSwipeScrollView.m; sourceTree = "<group>"; };
+		CC0011001D191E6E003FFBDA /* CarbonTabSwipeSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarbonTabSwipeSegmentedControl.h; sourceTree = "<group>"; };
+		CC0011011D191E6E003FFBDA /* CarbonTabSwipeSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonTabSwipeSegmentedControl.m; sourceTree = "<group>"; };
 		E30CE9557FE6F75765063244 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -628,7 +638,7 @@
 		8450ED1A1D116FA9001875B6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				84EA88961D17FB3F008B3B9F /* NIDropDown */,
+				CC0010F81D191E6E003FFBDA /* CarbonKit */,
 				84E888DC1D13F4FF00D2448F /* SwipeTableView */,
 				84E888D81D13DCCB00D2448F /* MHTabBarController */,
 				8450ED521D116FAA001875B6 /* MBProgressHUD */,
@@ -748,15 +758,6 @@
 			name = ListRank;
 			sourceTree = "<group>";
 		};
-		84EA88961D17FB3F008B3B9F /* NIDropDown */ = {
-			isa = PBXGroup;
-			children = (
-				84EA88971D17FB3F008B3B9F /* NIDropDown.h */,
-				84EA88981D17FB3F008B3B9F /* NIDropDown.m */,
-			);
-			path = NIDropDown;
-			sourceTree = "<group>";
-		};
 		9DFC7AB2A604AAE78BC874AA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -764,6 +765,22 @@
 				E30CE9557FE6F75765063244 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CC0010F81D191E6E003FFBDA /* CarbonKit */ = {
+			isa = PBXGroup;
+			children = (
+				CC0010F91D191E6E003FFBDA /* CarbonKit.h */,
+				CC0010FA1D191E6E003FFBDA /* CarbonSwipeRefresh.h */,
+				CC0010FB1D191E6E003FFBDA /* CarbonSwipeRefresh.m */,
+				CC0010FC1D191E6E003FFBDA /* CarbonTabSwipeNavigation.h */,
+				CC0010FD1D191E6E003FFBDA /* CarbonTabSwipeNavigation.m */,
+				CC0010FE1D191E6E003FFBDA /* CarbonTabSwipeScrollView.h */,
+				CC0010FF1D191E6E003FFBDA /* CarbonTabSwipeScrollView.m */,
+				CC0011001D191E6E003FFBDA /* CarbonTabSwipeSegmentedControl.h */,
+				CC0011011D191E6E003FFBDA /* CarbonTabSwipeSegmentedControl.m */,
+			);
+			path = CarbonKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -987,6 +1004,7 @@
 				8450EDA21D116FAA001875B6 /* ILA_ChampionDto.m in Sources */,
 				8450EDDC1D116FAA001875B6 /* RECommonFunctions.m in Sources */,
 				8450EDAD1D116FAA001875B6 /* ILA_MatchHistory.m in Sources */,
+				CC0011031D191E6E003FFBDA /* CarbonTabSwipeNavigation.m in Sources */,
 				8450EDE21D116FAA001875B6 /* SWRevealViewController.m in Sources */,
 				8450EDAB1D116FAA001875B6 /* ILA_LocalStore.m in Sources */,
 				8450EDBB1D116FAA001875B6 /* ILA_MasteryPagesDto.m in Sources */,
@@ -1006,6 +1024,7 @@
 				84E888DB1D13DCCB00D2448F /* MHTabBarController.m in Sources */,
 				8450EDAE1D116FAA001875B6 /* ILA_Setup.m in Sources */,
 				84E888D31D13DA4A00D2448F /* DetailTab2ViewController.m in Sources */,
+				CC0011051D191E6E003FFBDA /* CarbonTabSwipeSegmentedControl.m in Sources */,
 				8450EDA91D116FAA001875B6 /* ILA_Game.m in Sources */,
 				8450EC501D116EA0001875B6 /* AppDelegate.m in Sources */,
 				8450EDBA1D116FAA001875B6 /* ILA_MasteryPageDto.m in Sources */,
@@ -1018,16 +1037,17 @@
 				8450EDAF1D116FAA001875B6 /* ILA_StaticData.m in Sources */,
 				8450EDDD1D116FAA001875B6 /* REFrostedContainerViewController.m in Sources */,
 				847A6CFB1D12628600AC5701 /* UIStoryboard+Home.m in Sources */,
+				CC0011021D191E6E003FFBDA /* CarbonSwipeRefresh.m in Sources */,
 				84EA88951D17F421008B3B9F /* LoLListRankModel.m in Sources */,
 				84E888E51D13F56300D2448F /* CustomSegmentControl.m in Sources */,
 				8450EDB11D116FAA001875B6 /* ILA_Status.m in Sources */,
 				8450ED721D116FAA001875B6 /* Validator.m in Sources */,
+				CC0011041D191E6E003FFBDA /* CarbonTabSwipeScrollView.m in Sources */,
 				8450EDE01D116FAA001875B6 /* UIView+REFrostedViewController.m in Sources */,
 				8450EDB91D116FAA001875B6 /* ILA_MasteryDto.m in Sources */,
 				8450ED731D116FAA001875B6 /* City.m in Sources */,
 				84E888E11D13F4FF00D2448F /* SwipeTableView.m in Sources */,
 				84E888E21D13F4FF00D2448F /* UIView+SwipeTableViewFrame.m in Sources */,
-				84EA88991D17FB3F008B3B9F /* NIDropDown.m in Sources */,
 				8450EDDF1D116FAA001875B6 /* UIImage+REFrostedViewController.m in Sources */,
 				8450EDB71D116FAA001875B6 /* ILA_PlayerStatsSummaryDto.m in Sources */,
 				8450EC4D1D116EA0001875B6 /* main.m in Sources */,

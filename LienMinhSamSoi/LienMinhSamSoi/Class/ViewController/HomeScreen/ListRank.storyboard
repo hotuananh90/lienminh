@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--List Rank View Controller-->
         <scene sceneID="Htf-eH-JoJ">
             <objects>
                 <viewController storyboardIdentifier="ListRankView" automaticallyAdjustsScrollViewInsets="NO" id="fA1-v7-XN4" customClass="ListRankViewController" sceneMemberID="viewController">
@@ -50,7 +50,6 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                 </imageView>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="1XX-OP-E7e"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="8Na-b6-uww"/>
@@ -143,10 +142,6 @@
                                     <outlet property="delegate" destination="fA1-v7-XN4" id="bEE-Bi-FOz"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XrM-xw-1gU">
-                                <rect key="frame" x="254" y="26" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -156,18 +151,6 @@
                             <constraint firstItem="aX8-3X-jgw" firstAttribute="top" secondItem="KiM-pr-EeK" secondAttribute="bottom" id="fZF-Do-2uo"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="OQC-Ha-MTa">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="NdS-7O-7fs">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gt4-0A-dBX">
-                                <rect key="frame" x="233" y="7" width="71" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="actionSearch:" destination="fA1-v7-XN4" eventType="touchUpInside" id="vWP-QG-tor"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="listRankTableview" destination="aX8-3X-jgw" id="rO8-1S-jj3"/>

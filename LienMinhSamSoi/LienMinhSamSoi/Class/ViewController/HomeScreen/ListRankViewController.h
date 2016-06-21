@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ListRankViewController : UIViewController
-
+@property int index;
 @end

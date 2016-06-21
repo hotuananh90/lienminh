@@ -10,12 +10,10 @@
 #import "ListRankTableViewCell.h"
 #import "DEMONavigationController.h"
 #import "LoLListRankModel.h"
-#import "NIDropDown.h"
 
-@interface ListRankViewController ()<NIDropDownDelegate>
+@interface ListRankViewController ()
 {
     UIButton *revealButton;
-    NIDropDown *dropDown;
 }
 @property (weak, nonatomic) IBOutlet UITableView *listRankTableview;
 @property (nonatomic) NSMutableArray *arrRank;
@@ -33,7 +31,15 @@
     self.listRankTableview.rowHeight = UITableViewAutomaticDimension;
     [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeClear];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    NSString *url = @"https://kr.api.pvp.net/api/lol/kr/v2.5/league/challenger?type=RANKED_SOLO_5x5&api_key=6de0d632-b5e0-4221-97de-c4156b3617d3";
+    NSString *urlBase = [[NSUserDefaults standardUserDefaults]objectForKey:@"IndexViewController"];
+    if ([urlBase isEqualToString:@"0"]) {
+        urlBase = @"https://kr.api.pvp.net/api/lol/kr/";
+    }else if ([urlBase isEqualToString:@"1"]){
+        urlBase = @"https://na.api.pvp.net/api/lol/na/";
+    }else{
+        urlBase = @"https://br.api.pvp.net/api/lol/br/";
+    }
+    NSString *url = [NSString stringWithFormat:@"%@v2.5/league/challenger?type=RANKED_SOLO_5x5&api_key=6de0d632-b5e0-4221-97de-c4156b3617d3",urlBase] ;
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [SVProgressHUD dismiss];
         NSArray *arr = responseObject[@"entries"];
@@ -49,7 +55,16 @@
             rank.playerOrTeamName = [Validator getSafeString:dic[@"playerOrTeamName"]];
             rank.playerOrTeamId = [Validator getSafeString:dic[@"playerOrTeamId"]];
             rank.wins = [Validator getSafeString:dic[@"wins"]];
-            [self.arrRank addObject:rank];
+            
+            AFHTTPSessionManager *manager1 = [AFHTTPSessionManager manager];
+            [manager1 GET:[NSString stringWithFormat:@"https://kr.api.pvp.net/api/lol/kr/v1.4/summoner/%@?api_key=6de0d632-b5e0-4221-97de-c4156b3617d3",rank.playerOrTeamId] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                NSDictionary *dic = responseObject;
+                NSDictionary *asd = dic.allKeys;
+                rank.wins = [Validator getSafeString:asd[@"profileIconId"]];
+                [self.arrRank addObject:rank];
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                [SVProgressHUD dismiss];
+            }];
         }
         NSArray *sorted = [self.arrRank sortedArrayUsingComparator:^NSComparisonResult(id lhs, id rhs) {
             LoLListRankModel *p1 = lhs, *p2 = rhs;
@@ -60,8 +75,10 @@
                 return NSOrderedDescending;
             } return NSOrderedSame;
         }];
-        self.arrRank = [NSMutableArray arrayWithArray:sorted];
-        [self.listRankTableview reloadData];
+        if (self.arrRank.count >0) {
+            self.arrRank = [NSMutableArray arrayWithArray:sorted];
+            [self.listRankTableview reloadData];
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [SVProgressHUD dismiss];
     }];
@@ -130,35 +147,8 @@
 }
 
 - (IBAction)actionSearch:(id)sender {
-    NSArray * arr = [[NSArray alloc] init];
-    arr = [NSArray arrayWithObjects:@"Add Prospect", @"Product Knowledge", @"Business Knowledge",nil];
-    if(dropDown == nil) {
-        CGFloat f = 200;
-        dropDown = [[NIDropDown alloc]showDropDown:sender :&f :arr :nil :@"down"];
-        dropDown.delegate = self;
-    }
-    else {
-        [dropDown hideDropDown:sender];
-        [self rel];
-    }
+    
 }
 
--(void)rel{
-    //    [dropDown release];
-    dropDown = nil;
-}
-
-- (void) niDropDownDelegateMethod: (NIDropDown *) sender {
-    if (sender.indexPath.row == 0) {
-        
-    }
-    if (sender.indexPath.row == 1) {
-        
-    }
-    if (sender.indexPath.row == 2) {
-        
-    }
-    [self rel];
-}
 
 @end
