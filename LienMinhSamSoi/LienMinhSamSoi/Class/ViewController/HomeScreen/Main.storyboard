@@ -230,10 +230,10 @@
             </objects>
             <point key="canvasLocation" x="485" y="164"/>
         </scene>
-        <!--Detail Tab1 View Controller-->
+        <!--View Controller-->
         <scene sceneID="3tO-ye-KxQ">
             <objects>
-                <viewController storyboardIdentifier="DetailTab1" id="9nL-cT-wDs" customClass="DetailTab1ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailTab1" id="9nL-cT-wDs" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v3O-6h-90j"/>
                         <viewControllerLayoutGuide type="bottom" id="bb6-wH-WSP"/>
@@ -266,10 +266,10 @@
             </objects>
             <point key="canvasLocation" x="852" y="164"/>
         </scene>
-        <!--Detail Tab2 View Controller-->
+        <!--View Controller-->
         <scene sceneID="D1l-gj-M7z">
             <objects>
-                <viewController storyboardIdentifier="DetailTab2" id="Me0-N7-1xs" customClass="DetailTab2ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailTab2" id="Me0-N7-1xs" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tw7-UF-KOg"/>
                         <viewControllerLayoutGuide type="bottom" id="krv-TF-CS4"/>

@@ -92,6 +92,16 @@
 		84E888D01D13DA3600D2448F /* DetailTab1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E888CF1D13DA3600D2448F /* DetailTab1ViewController.m */; };
 		84E888D31D13DA4A00D2448F /* DetailTab2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E888D21D13DA4A00D2448F /* DetailTab2ViewController.m */; };
 		84E888DB1D13DCCB00D2448F /* MHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E888DA1D13DCCB00D2448F /* MHTabBarController.m */; };
+		84E888E11D13F4FF00D2448F /* SwipeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E888DE1D13F4FF00D2448F /* SwipeTableView.m */; };
+		84E888E21D13F4FF00D2448F /* UIView+SwipeTableViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E888E01D13F4FF00D2448F /* UIView+SwipeTableViewFrame.m */; };
+		84E888E51D13F56300D2448F /* CustomSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E888E41D13F56300D2448F /* CustomSegmentControl.m */; };
+		84E888E71D13FF0C00D2448F /* onepiece_kiudai.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E888E61D13FF0C00D2448F /* onepiece_kiudai.png */; };
+		84EA888B1D17D4B7008B3B9F /* ListRankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EA888A1D17D4B7008B3B9F /* ListRankViewController.m */; };
+		84EA888D1D17D4CB008B3B9F /* ListRank.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EA888C1D17D4CB008B3B9F /* ListRank.storyboard */; };
+		84EA888F1D17D677008B3B9F /* icon_rank.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EA888E1D17D677008B3B9F /* icon_rank.png */; };
+		84EA88921D17E2E1008B3B9F /* ListRankTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EA88911D17E2E1008B3B9F /* ListRankTableViewCell.m */; };
+		84EA88951D17F421008B3B9F /* LoLListRankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EA88941D17F421008B3B9F /* LoLListRankModel.m */; };
+		84EA88991D17FB3F008B3B9F /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EA88981D17FB3F008B3B9F /* NIDropDown.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,6 +271,23 @@
 		84E888D21D13DA4A00D2448F /* DetailTab2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTab2ViewController.m; sourceTree = "<group>"; };
 		84E888D91D13DCCB00D2448F /* MHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHTabBarController.h; sourceTree = "<group>"; };
 		84E888DA1D13DCCB00D2448F /* MHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHTabBarController.m; sourceTree = "<group>"; };
+		84E888DD1D13F4FF00D2448F /* SwipeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeTableView.h; sourceTree = "<group>"; };
+		84E888DE1D13F4FF00D2448F /* SwipeTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeTableView.m; sourceTree = "<group>"; };
+		84E888DF1D13F4FF00D2448F /* UIView+SwipeTableViewFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SwipeTableViewFrame.h"; sourceTree = "<group>"; };
+		84E888E01D13F4FF00D2448F /* UIView+SwipeTableViewFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SwipeTableViewFrame.m"; sourceTree = "<group>"; };
+		84E888E31D13F56300D2448F /* CustomSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegmentControl.h; sourceTree = "<group>"; };
+		84E888E41D13F56300D2448F /* CustomSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegmentControl.m; sourceTree = "<group>"; };
+		84E888E61D13FF0C00D2448F /* onepiece_kiudai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onepiece_kiudai.png; sourceTree = "<group>"; };
+		84EA88891D17D4B7008B3B9F /* ListRankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListRankViewController.h; sourceTree = "<group>"; };
+		84EA888A1D17D4B7008B3B9F /* ListRankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListRankViewController.m; sourceTree = "<group>"; };
+		84EA888C1D17D4CB008B3B9F /* ListRank.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ListRank.storyboard; sourceTree = "<group>"; };
+		84EA888E1D17D677008B3B9F /* icon_rank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_rank.png; sourceTree = "<group>"; };
+		84EA88901D17E2E1008B3B9F /* ListRankTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListRankTableViewCell.h; sourceTree = "<group>"; };
+		84EA88911D17E2E1008B3B9F /* ListRankTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListRankTableViewCell.m; sourceTree = "<group>"; };
+		84EA88931D17F421008B3B9F /* LoLListRankModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoLListRankModel.h; sourceTree = "<group>"; };
+		84EA88941D17F421008B3B9F /* LoLListRankModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoLListRankModel.m; sourceTree = "<group>"; };
+		84EA88971D17FB3F008B3B9F /* NIDropDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIDropDown.h; sourceTree = "<group>"; };
+		84EA88981D17FB3F008B3B9F /* NIDropDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIDropDown.m; sourceTree = "<group>"; };
 		87AA7390E151E841AAF300AB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E30CE9557FE6F75765063244 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -400,6 +427,8 @@
 			children = (
 				8450EC891D116FA9001875B6 /* City.h */,
 				8450EC8A1D116FA9001875B6 /* City.m */,
+				84EA88931D17F421008B3B9F /* LoLListRankModel.h */,
+				84EA88941D17F421008B3B9F /* LoLListRankModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -423,6 +452,7 @@
 		8450EC9B1D116FA9001875B6 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				84EA88881D17D4A2008B3B9F /* ListRank */,
 				84E888CA1D13D75000D2448F /* Detail */,
 				847A6CF91D12628600AC5701 /* UIStoryboard+Home.h */,
 				847A6CFA1D12628600AC5701 /* UIStoryboard+Home.m */,
@@ -450,6 +480,8 @@
 		8450ECC61D116FA9001875B6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				84EA888E1D17D677008B3B9F /* icon_rank.png */,
+				84E888E61D13FF0C00D2448F /* onepiece_kiudai.png */,
 				847A6D031D12934600AC5701 /* img_list_placeholder.png */,
 				8450ECC71D116FA9001875B6 /* ic_Home.png */,
 				8450ECC81D116FA9001875B6 /* ic_menu.png */,
@@ -596,6 +628,8 @@
 		8450ED1A1D116FA9001875B6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				84EA88961D17FB3F008B3B9F /* NIDropDown */,
+				84E888DC1D13F4FF00D2448F /* SwipeTableView */,
 				84E888D81D13DCCB00D2448F /* MHTabBarController */,
 				8450ED521D116FAA001875B6 /* MBProgressHUD */,
 				8450ED581D116FAA001875B6 /* REFrostedViewController */,
@@ -687,6 +721,40 @@
 				84E888DA1D13DCCB00D2448F /* MHTabBarController.m */,
 			);
 			path = MHTabBarController;
+			sourceTree = "<group>";
+		};
+		84E888DC1D13F4FF00D2448F /* SwipeTableView */ = {
+			isa = PBXGroup;
+			children = (
+				84E888E31D13F56300D2448F /* CustomSegmentControl.h */,
+				84E888E41D13F56300D2448F /* CustomSegmentControl.m */,
+				84E888DD1D13F4FF00D2448F /* SwipeTableView.h */,
+				84E888DE1D13F4FF00D2448F /* SwipeTableView.m */,
+				84E888DF1D13F4FF00D2448F /* UIView+SwipeTableViewFrame.h */,
+				84E888E01D13F4FF00D2448F /* UIView+SwipeTableViewFrame.m */,
+			);
+			path = SwipeTableView;
+			sourceTree = "<group>";
+		};
+		84EA88881D17D4A2008B3B9F /* ListRank */ = {
+			isa = PBXGroup;
+			children = (
+				84EA88891D17D4B7008B3B9F /* ListRankViewController.h */,
+				84EA888A1D17D4B7008B3B9F /* ListRankViewController.m */,
+				84EA888C1D17D4CB008B3B9F /* ListRank.storyboard */,
+				84EA88901D17E2E1008B3B9F /* ListRankTableViewCell.h */,
+				84EA88911D17E2E1008B3B9F /* ListRankTableViewCell.m */,
+			);
+			name = ListRank;
+			sourceTree = "<group>";
+		};
+		84EA88961D17FB3F008B3B9F /* NIDropDown */ = {
+			isa = PBXGroup;
+			children = (
+				84EA88971D17FB3F008B3B9F /* NIDropDown.h */,
+				84EA88981D17FB3F008B3B9F /* NIDropDown.m */,
+			);
+			path = NIDropDown;
 			sourceTree = "<group>";
 		};
 		9DFC7AB2A604AAE78BC874AA /* Pods */ = {
@@ -806,6 +874,7 @@
 			files = (
 				8450EDA11D116FAA001875B6 /* splash.jpg in Resources */,
 				8450ED9F1D116FAA001875B6 /* icon_Play.png in Resources */,
+				84EA888D1D17D4CB008B3B9F /* ListRank.storyboard in Resources */,
 				8450EC5B1D116EA0001875B6 /* LaunchScreen.storyboard in Resources */,
 				8450ED931D116FAA001875B6 /* ic_profile.png in Resources */,
 				8450ED9B1D116FAA001875B6 /* Icon-Small.png in Resources */,
@@ -819,6 +888,7 @@
 				8450ED861D116FAA001875B6 /* MenuViewController.xib in Resources */,
 				8450ED961D116FAA001875B6 /* Icon-40@3x.png in Resources */,
 				8450EDA01D116FAA001875B6 /* iconMenu.png in Resources */,
+				84EA888F1D17D677008B3B9F /* icon_rank.png in Resources */,
 				8450EDB41D116FAA001875B6 /* Regional Endpoints.plist in Resources */,
 				8450ED841D116FAA001875B6 /* MenuTableViewCell.xib in Resources */,
 				8450ED971D116FAA001875B6 /* Icon-60@2x.png in Resources */,
@@ -827,6 +897,7 @@
 				8450EDE31D116FAA001875B6 /* SWRevealViewController.zip in Resources */,
 				847A6D041D12934600AC5701 /* img_list_placeholder.png in Resources */,
 				8450ED921D116FAA001875B6 /* ic_menu.png in Resources */,
+				84E888E71D13FF0C00D2448F /* onepiece_kiudai.png in Resources */,
 				8450EDA31D116FAA001875B6 /* Endpoints.plist in Resources */,
 				8450ED9A1D116FAA001875B6 /* Icon-76@2x.png in Resources */,
 				8450ED7B1D116FAA001875B6 /* Main.storyboard in Resources */,
@@ -920,11 +991,13 @@
 				8450EDAB1D116FAA001875B6 /* ILA_LocalStore.m in Sources */,
 				8450EDBB1D116FAA001875B6 /* ILA_MasteryPagesDto.m in Sources */,
 				8450EDBC1D116FAA001875B6 /* ILA_RunePageDto.m in Sources */,
+				84EA888B1D17D4B7008B3B9F /* ListRankViewController.m in Sources */,
 				847A6CF81D12626F00AC5701 /* ListChampionViewController.m in Sources */,
 				8450EDBE1D116FAA001875B6 /* ILA_RuneSlotDto.m in Sources */,
 				8450EDB01D116FAA001875B6 /* ILA_Stats.m in Sources */,
 				8450EDB21D116FAA001875B6 /* ILA_Summoner.m in Sources */,
 				8450EDE51D116FAA001875B6 /* UIStoryboard+Quickly.m in Sources */,
+				84EA88921D17E2E1008B3B9F /* ListRankTableViewCell.m in Sources */,
 				8450ED701D116FAA001875B6 /* Global.m in Sources */,
 				8450EDDE1D116FAA001875B6 /* REFrostedViewController.m in Sources */,
 				8450EDBD1D116FAA001875B6 /* ILA_RunePagesDto.m in Sources */,
@@ -945,11 +1018,16 @@
 				8450EDAF1D116FAA001875B6 /* ILA_StaticData.m in Sources */,
 				8450EDDD1D116FAA001875B6 /* REFrostedContainerViewController.m in Sources */,
 				847A6CFB1D12628600AC5701 /* UIStoryboard+Home.m in Sources */,
+				84EA88951D17F421008B3B9F /* LoLListRankModel.m in Sources */,
+				84E888E51D13F56300D2448F /* CustomSegmentControl.m in Sources */,
 				8450EDB11D116FAA001875B6 /* ILA_Status.m in Sources */,
 				8450ED721D116FAA001875B6 /* Validator.m in Sources */,
 				8450EDE01D116FAA001875B6 /* UIView+REFrostedViewController.m in Sources */,
 				8450EDB91D116FAA001875B6 /* ILA_MasteryDto.m in Sources */,
 				8450ED731D116FAA001875B6 /* City.m in Sources */,
+				84E888E11D13F4FF00D2448F /* SwipeTableView.m in Sources */,
+				84E888E21D13F4FF00D2448F /* UIView+SwipeTableViewFrame.m in Sources */,
+				84EA88991D17FB3F008B3B9F /* NIDropDown.m in Sources */,
 				8450EDDF1D116FAA001875B6 /* UIImage+REFrostedViewController.m in Sources */,
 				8450EDB71D116FAA001875B6 /* ILA_PlayerStatsSummaryDto.m in Sources */,
 				8450EC4D1D116EA0001875B6 /* main.m in Sources */,

@@ -8,30 +8,44 @@
 
 #import "DetailTab2ViewController.h"
 
-@interface DetailTab2ViewController ()
+@interface DetailTab2ViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
 @implementation DetailTab2ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
+    self = [super initWithFrame:frame style:style];
+    if (self) {
+        self.delegate = self;
+        self.dataSource = self;
+        [self registerClass:UITableViewCell.class forCellReuseIdentifier:@"cell"];
+        self.tableFooterView = [UIView new];
+        self.itemIndex = -1;
+    }
+    return self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UITableView M
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _numberOfRows;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60;
 }
-*/
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    NSString * title = nil;
+    if (_itemIndex >= 0) {
+        title = [NSString stringWithFormat:@"[ ItemView_%ld ] ---- 第 %ld 行",_itemIndex,indexPath.row];
+    }else {
+        title = [NSString stringWithFormat:@"第 %ld 行",indexPath.row];
+    }
+    cell.textLabel.text = title;
+    cell.textLabel.textColor = [UIColor whiteColor];
+    return cell;
+}
 @end

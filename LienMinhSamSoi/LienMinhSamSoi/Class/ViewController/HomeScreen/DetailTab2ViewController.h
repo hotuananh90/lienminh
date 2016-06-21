@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailTab2ViewController : UIViewController
-
+@interface DetailTab2ViewController : UITableView
+@property (nonatomic, assign) NSInteger numberOfRows;
+@property (nonatomic, assign) NSInteger itemIndex;
 @end

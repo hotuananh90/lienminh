@@ -101,14 +101,7 @@
 {
     DetailViewController *home = [UIStoryboard instantiateDetailViewController];
     home.title = @"概要";
-    DetailTab1ViewController* tab2 = [UIStoryboard instantiateDetailTab1ViewController];
-    tab2.title = @"リンパ反射";
-    DetailTab2ViewController* tab3 = [UIStoryboard instantiateDetailTab2ViewController];
-    tab3.title = @"神経血管反射";
-    MHTabBarController* tabbar = [[MHTabBarController alloc] init];
-    tabbar.viewControllers = @[home,tab2,tab3];
-    
-    [self.navigationController pushViewController:tabbar animated:YES];
+    [self.navigationController pushViewController:home animated:YES];
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Deselect item

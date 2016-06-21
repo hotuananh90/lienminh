@@ -16,6 +16,7 @@
 #import "Macro.h"
 #import "ListChampionViewController.h"
 #import "UIStoryboard+Home.h"
+#import "ListRankViewController.h"
 
 @interface MenuViewController ()<REFrostedViewControllerDelegate>
 {
@@ -49,7 +50,6 @@
 }
 
 #pragma mark UITableViewDelegate
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -89,9 +89,14 @@
         ViewController *homeViewController = [UIStoryboard instantiateHomeViewController];
         DEMONavigationController *navigationController = [[DEMONavigationController alloc] initWithRootViewController:homeViewController];
         self.frostedViewController.contentViewController = navigationController;
-    } else {
+    } else if(indexPath.row == 1){
         ListChampionViewController *ListChampion = [UIStoryboard ListChampionViewController];
         DEMONavigationController *navigationController = [[DEMONavigationController alloc] initWithRootViewController:ListChampion];
+        self.frostedViewController.contentViewController = navigationController;
+    }else if(indexPath.row == 2){
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"ListRank" bundle: nil];
+        ListChampionViewController *controller = (ListChampionViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"ListRankView"];
+        DEMONavigationController *navigationController = [[DEMONavigationController alloc] initWithRootViewController:controller];
         self.frostedViewController.contentViewController = navigationController;
     }
     
