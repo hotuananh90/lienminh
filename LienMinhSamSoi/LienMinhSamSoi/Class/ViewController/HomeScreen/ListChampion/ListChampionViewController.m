@@ -80,7 +80,6 @@
     ChampionCollectionViewCell *cell = (ChampionCollectionViewCell *)[_championCollectionView dequeueReusableCellWithReuseIdentifier:xib forIndexPath:indexPath];
     [cell.img setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://ddragon.leagueoflegends.com/cdn/%@/img/champion/%@.png",version,self.dicChampion.allValues[indexPath.row]]] placeholderImage:[UIImage imageNamed:@"img_list_placeholder"]];
     cell.nameLabel.text =self.dicChampion.allValues[indexPath.row];
-    cell.nameLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
     if (cell.selected) {
         cell.backgroundColor = [UIColor lightGrayColor]; // highlight selection
     }

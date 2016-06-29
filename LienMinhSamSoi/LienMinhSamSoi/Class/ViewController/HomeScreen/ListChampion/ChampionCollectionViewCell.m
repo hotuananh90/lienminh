@@ -15,7 +15,7 @@
     dispatch_async (dispatch_get_main_queue(), ^{
         [self.contentView setNeedsLayout];
         [self.contentView layoutIfNeeded];
-        
+        self.nameLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
         [self.bgView.layer setBorderWidth:1];
         [self.bgView.layer setBorderColor:RGB(146, 130, 88).CGColor];
     });

@@ -19,4 +19,5 @@
 @property (strong , nonatomic) NSString * isVeteran;
 @property (strong , nonatomic) NSString * losses;
 @property (strong , nonatomic) NSString * playerOrTeamName;
+@property (strong , nonatomic) NSString * profileID;
 @end

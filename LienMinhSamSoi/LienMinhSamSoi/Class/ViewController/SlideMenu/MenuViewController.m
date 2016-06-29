@@ -10,7 +10,6 @@
 #import "SWRevealViewController.h"
 #import "MenuTableViewCell.h"
 #import "ViewController.h"
-#import "UIStoryboard+Quickly.h"
 #import "DEMONavigationController.h"
 #import "REFrostedViewController.h"
 #import "Macro.h"

@@ -81,7 +81,6 @@
 		8450EDE21D116FAA001875B6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450ED691D116FAA001875B6 /* SWRevealViewController.m */; };
 		8450EDE31D116FAA001875B6 /* SWRevealViewController.zip in Resources */ = {isa = PBXBuildFile; fileRef = 8450ED6A1D116FAA001875B6 /* SWRevealViewController.zip */; };
 		8450EDE41D116FAA001875B6 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450ED6D1D116FAA001875B6 /* UIView+Toast.m */; };
-		8450EDE51D116FAA001875B6 /* UIStoryboard+Quickly.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450ED6F1D116FAA001875B6 /* UIStoryboard+Quickly.m */; };
 		847A6CF81D12626F00AC5701 /* ListChampionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847A6CF71D12626F00AC5701 /* ListChampionViewController.m */; };
 		847A6CFB1D12628600AC5701 /* UIStoryboard+Home.m in Sources */ = {isa = PBXBuildFile; fileRef = 847A6CFA1D12628600AC5701 /* UIStoryboard+Home.m */; };
 		847A6CFE1D1263ED00AC5701 /* ChampionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847A6CFD1D1263ED00AC5701 /* ChampionCollectionViewCell.m */; };
@@ -91,7 +90,6 @@
 		84E888CD1D13D76500D2448F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E888CC1D13D76500D2448F /* DetailViewController.m */; };
 		84E888D01D13DA3600D2448F /* DetailTab1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E888CF1D13DA3600D2448F /* DetailTab1ViewController.m */; };
 		84E888D31D13DA4A00D2448F /* DetailTab2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E888D21D13DA4A00D2448F /* DetailTab2ViewController.m */; };
-		84E888DB1D13DCCB00D2448F /* MHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E888DA1D13DCCB00D2448F /* MHTabBarController.m */; };
 		84E888E11D13F4FF00D2448F /* SwipeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E888DE1D13F4FF00D2448F /* SwipeTableView.m */; };
 		84E888E21D13F4FF00D2448F /* UIView+SwipeTableViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E888E01D13F4FF00D2448F /* UIView+SwipeTableViewFrame.m */; };
 		84E888E51D13F56300D2448F /* CustomSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E888E41D13F56300D2448F /* CustomSegmentControl.m */; };
@@ -105,6 +103,8 @@
 		CC0011031D191E6E003FFBDA /* CarbonTabSwipeNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0010FD1D191E6E003FFBDA /* CarbonTabSwipeNavigation.m */; };
 		CC0011041D191E6E003FFBDA /* CarbonTabSwipeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0010FF1D191E6E003FFBDA /* CarbonTabSwipeScrollView.m */; };
 		CC0011051D191E6E003FFBDA /* CarbonTabSwipeSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0011011D191E6E003FFBDA /* CarbonTabSwipeSegmentedControl.m */; };
+		CC48B4751D212622000664D7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC48B4741D212622000664D7 /* HomeViewController.m */; };
+		CC48B4781D212C8F000664D7 /* CollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC48B4771D212C8F000664D7 /* CollectionReusableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -254,8 +254,6 @@
 		8450ED6A1D116FAA001875B6 /* SWRevealViewController.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = SWRevealViewController.zip; sourceTree = "<group>"; };
 		8450ED6C1D116FAA001875B6 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		8450ED6D1D116FAA001875B6 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
-		8450ED6E1D116FAA001875B6 /* UIStoryboard+Quickly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+Quickly.h"; sourceTree = "<group>"; };
-		8450ED6F1D116FAA001875B6 /* UIStoryboard+Quickly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+Quickly.m"; sourceTree = "<group>"; };
 		847A6CF61D12626F00AC5701 /* ListChampionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListChampionViewController.h; sourceTree = "<group>"; };
 		847A6CF71D12626F00AC5701 /* ListChampionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListChampionViewController.m; sourceTree = "<group>"; };
 		847A6CF91D12628600AC5701 /* UIStoryboard+Home.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+Home.h"; sourceTree = "<group>"; };
@@ -272,8 +270,6 @@
 		84E888CF1D13DA3600D2448F /* DetailTab1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTab1ViewController.m; sourceTree = "<group>"; };
 		84E888D11D13DA4A00D2448F /* DetailTab2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTab2ViewController.h; sourceTree = "<group>"; };
 		84E888D21D13DA4A00D2448F /* DetailTab2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTab2ViewController.m; sourceTree = "<group>"; };
-		84E888D91D13DCCB00D2448F /* MHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHTabBarController.h; sourceTree = "<group>"; };
-		84E888DA1D13DCCB00D2448F /* MHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHTabBarController.m; sourceTree = "<group>"; };
 		84E888DD1D13F4FF00D2448F /* SwipeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeTableView.h; sourceTree = "<group>"; };
 		84E888DE1D13F4FF00D2448F /* SwipeTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeTableView.m; sourceTree = "<group>"; };
 		84E888DF1D13F4FF00D2448F /* UIView+SwipeTableViewFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SwipeTableViewFrame.h"; sourceTree = "<group>"; };
@@ -299,6 +295,10 @@
 		CC0010FF1D191E6E003FFBDA /* CarbonTabSwipeScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonTabSwipeScrollView.m; sourceTree = "<group>"; };
 		CC0011001D191E6E003FFBDA /* CarbonTabSwipeSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarbonTabSwipeSegmentedControl.h; sourceTree = "<group>"; };
 		CC0011011D191E6E003FFBDA /* CarbonTabSwipeSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonTabSwipeSegmentedControl.m; sourceTree = "<group>"; };
+		CC48B4731D212622000664D7 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		CC48B4741D212622000664D7 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		CC48B4761D212C8F000664D7 /* CollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionReusableView.h; sourceTree = "<group>"; };
+		CC48B4771D212C8F000664D7 /* CollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionReusableView.m; sourceTree = "<group>"; };
 		E30CE9557FE6F75765063244 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -462,14 +462,15 @@
 		8450EC9B1D116FA9001875B6 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				847A6CF51D12626F00AC5701 /* ListChampion */,
+				CC48B4791D213088000664D7 /* Search */,
 				84EA88881D17D4A2008B3B9F /* ListRank */,
 				84E888CA1D13D75000D2448F /* Detail */,
 				847A6CF91D12628600AC5701 /* UIStoryboard+Home.h */,
 				847A6CFA1D12628600AC5701 /* UIStoryboard+Home.m */,
-				847A6CF51D12626F00AC5701 /* ListChampion */,
 				8450EC9C1D116FA9001875B6 /* Main.storyboard */,
-				8450EC9D1D116FA9001875B6 /* ViewController.h */,
-				8450EC9E1D116FA9001875B6 /* ViewController.m */,
+				CC48B4731D212622000664D7 /* HomeViewController.h */,
+				CC48B4741D212622000664D7 /* HomeViewController.m */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -640,14 +641,11 @@
 			children = (
 				CC0010F81D191E6E003FFBDA /* CarbonKit */,
 				84E888DC1D13F4FF00D2448F /* SwipeTableView */,
-				84E888D81D13DCCB00D2448F /* MHTabBarController */,
 				8450ED521D116FAA001875B6 /* MBProgressHUD */,
 				8450ED581D116FAA001875B6 /* REFrostedViewController */,
 				8450ED671D116FAA001875B6 /* SWRevealViewController */,
 				8450ED6A1D116FAA001875B6 /* SWRevealViewController.zip */,
 				8450ED6B1D116FAA001875B6 /* toast */,
-				8450ED6E1D116FAA001875B6 /* UIStoryboard+Quickly.h */,
-				8450ED6F1D116FAA001875B6 /* UIStoryboard+Quickly.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -724,15 +722,6 @@
 			name = Detail;
 			sourceTree = "<group>";
 		};
-		84E888D81D13DCCB00D2448F /* MHTabBarController */ = {
-			isa = PBXGroup;
-			children = (
-				84E888D91D13DCCB00D2448F /* MHTabBarController.h */,
-				84E888DA1D13DCCB00D2448F /* MHTabBarController.m */,
-			);
-			path = MHTabBarController;
-			sourceTree = "<group>";
-		};
 		84E888DC1D13F4FF00D2448F /* SwipeTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -781,6 +770,17 @@
 				CC0011011D191E6E003FFBDA /* CarbonTabSwipeSegmentedControl.m */,
 			);
 			path = CarbonKit;
+			sourceTree = "<group>";
+		};
+		CC48B4791D213088000664D7 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CC48B4761D212C8F000664D7 /* CollectionReusableView.h */,
+				CC48B4771D212C8F000664D7 /* CollectionReusableView.m */,
+				8450EC9D1D116FA9001875B6 /* ViewController.h */,
+				8450EC9E1D116FA9001875B6 /* ViewController.m */,
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -853,6 +853,7 @@
 				TargetAttributes = {
 					8450EC471D116EA0001875B6 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = V6486NDZ6E;
 					};
 					8450EC601D116EA0001875B6 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1003,6 +1004,7 @@
 				8450EDE41D116FAA001875B6 /* UIView+Toast.m in Sources */,
 				8450EDA21D116FAA001875B6 /* ILA_ChampionDto.m in Sources */,
 				8450EDDC1D116FAA001875B6 /* RECommonFunctions.m in Sources */,
+				CC48B4781D212C8F000664D7 /* CollectionReusableView.m in Sources */,
 				8450EDAD1D116FAA001875B6 /* ILA_MatchHistory.m in Sources */,
 				CC0011031D191E6E003FFBDA /* CarbonTabSwipeNavigation.m in Sources */,
 				8450EDE21D116FAA001875B6 /* SWRevealViewController.m in Sources */,
@@ -1014,20 +1016,19 @@
 				8450EDBE1D116FAA001875B6 /* ILA_RuneSlotDto.m in Sources */,
 				8450EDB01D116FAA001875B6 /* ILA_Stats.m in Sources */,
 				8450EDB21D116FAA001875B6 /* ILA_Summoner.m in Sources */,
-				8450EDE51D116FAA001875B6 /* UIStoryboard+Quickly.m in Sources */,
 				84EA88921D17E2E1008B3B9F /* ListRankTableViewCell.m in Sources */,
 				8450ED701D116FAA001875B6 /* Global.m in Sources */,
 				8450EDDE1D116FAA001875B6 /* REFrostedViewController.m in Sources */,
 				8450EDBD1D116FAA001875B6 /* ILA_RunePagesDto.m in Sources */,
 				8450ED7C1D116FAA001875B6 /* ViewController.m in Sources */,
 				8450EDB51D116FAA001875B6 /* ILA_StaticData_ChampionDto.m in Sources */,
-				84E888DB1D13DCCB00D2448F /* MHTabBarController.m in Sources */,
 				8450EDAE1D116FAA001875B6 /* ILA_Setup.m in Sources */,
 				84E888D31D13DA4A00D2448F /* DetailTab2ViewController.m in Sources */,
 				CC0011051D191E6E003FFBDA /* CarbonTabSwipeSegmentedControl.m in Sources */,
 				8450EDA91D116FAA001875B6 /* ILA_Game.m in Sources */,
 				8450EC501D116EA0001875B6 /* AppDelegate.m in Sources */,
 				8450EDBA1D116FAA001875B6 /* ILA_MasteryPageDto.m in Sources */,
+				CC48B4751D212622000664D7 /* HomeViewController.m in Sources */,
 				8450EDAA1D116FAA001875B6 /* ILA_League.m in Sources */,
 				8450EDB31D116FAA001875B6 /* ILA_Team.m in Sources */,
 				8450EDE11D116FAA001875B6 /* UIViewController+REFrostedViewController.m in Sources */,
@@ -1187,12 +1188,15 @@
 			baseConfigurationReference = 2A39BD3A4DE9A118F4701FAF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = LienMinhSamSoi/PrefixHeader.pch;
 				INFOPLIST_FILE = LienMinhSamSoi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lienminhsamsoi.LienMinhSamSoi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lienminhsamsoi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1201,12 +1205,15 @@
 			baseConfigurationReference = E30CE9557FE6F75765063244 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = LienMinhSamSoi/PrefixHeader.pch;
 				INFOPLIST_FILE = LienMinhSamSoi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lienminhsamsoi.LienMinhSamSoi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lienminhsamsoi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

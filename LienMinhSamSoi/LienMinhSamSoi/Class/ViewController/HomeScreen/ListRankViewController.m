@@ -10,6 +10,8 @@
 #import "ListRankTableViewCell.h"
 #import "DEMONavigationController.h"
 #import "LoLListRankModel.h"
+#import "DetailViewController.h"
+#import "UIStoryboard+Home.h"
 
 @interface ListRankViewController ()
 {
@@ -17,6 +19,8 @@
 }
 @property (weak, nonatomic) IBOutlet UITableView *listRankTableview;
 @property (nonatomic) NSMutableArray *arrRank;
+@property (nonatomic) UIRefreshControl *refreshControl;
+@property (nonatomic) NSString *strIndex;
 @end
 
 @implementation ListRankViewController
@@ -26,22 +30,41 @@
     // Do any additional setup after loading the view.
     [self setTheme];
     self.arrRank = [[NSMutableArray alloc]init];
+    UITableViewController *tableViewController = [[UITableViewController alloc] init];
+    tableViewController.tableView = self.listRankTableview;
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.tintColor = [UIColor grayColor];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
+    [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
+    tableViewController.refreshControl = self.refreshControl;
+    
     [self.listRankTableview setContentInset:UIEdgeInsetsMake(10, 0, 0, 0)];
     self.listRankTableview.estimatedRowHeight = 100;
     self.listRankTableview.rowHeight = UITableViewAutomaticDimension;
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(loadData:) name:@"IndexViewController" object:nil];
+}
+
+- (void)loadData:(NSNotification *)notification {
+    self.strIndex = notification.object;
+    [self refreshData];
+}
+
+- (void)refreshData{
+    [self.refreshControl endRefreshing];
     [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeClear];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    NSString *urlBase = [[NSUserDefaults standardUserDefaults]objectForKey:@"IndexViewController"];
-    if ([urlBase isEqualToString:@"0"]) {
-        urlBase = @"https://kr.api.pvp.net/api/lol/kr/";
-    }else if ([urlBase isEqualToString:@"1"]){
-        urlBase = @"https://na.api.pvp.net/api/lol/na/";
+    NSString *baseUrl;
+    if ([_strIndex isEqualToString:@"1"]) {
+        baseUrl = @"https://kr.api.pvp.net/api/lol/kr/";
+    }else if ([_strIndex isEqualToString:@"2"]){
+        baseUrl = @"https://na.api.pvp.net/api/lol/na/";
     }else{
-        urlBase = @"https://br.api.pvp.net/api/lol/br/";
+        baseUrl = @"https://br.api.pvp.net/api/lol/br/";
     }
-    NSString *url = [NSString stringWithFormat:@"%@v2.5/league/challenger?type=RANKED_SOLO_5x5&api_key=6de0d632-b5e0-4221-97de-c4156b3617d3",urlBase] ;
+    
+    NSString *url = [NSString stringWithFormat:@"%@v2.5/league/challenger?type=RANKED_SOLO_5x5&api_key=b531556e-a9a8-48b8-9edb-46d9276a8cd8",baseUrl] ;
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [SVProgressHUD dismiss];
+        [self.arrRank removeAllObjects];
         NSArray *arr = responseObject[@"entries"];
         for (NSDictionary *dic in arr) {
             LoLListRankModel *rank = [[LoLListRankModel alloc]init];
@@ -55,16 +78,7 @@
             rank.playerOrTeamName = [Validator getSafeString:dic[@"playerOrTeamName"]];
             rank.playerOrTeamId = [Validator getSafeString:dic[@"playerOrTeamId"]];
             rank.wins = [Validator getSafeString:dic[@"wins"]];
-            
-            AFHTTPSessionManager *manager1 = [AFHTTPSessionManager manager];
-            [manager1 GET:[NSString stringWithFormat:@"https://kr.api.pvp.net/api/lol/kr/v1.4/summoner/%@?api_key=6de0d632-b5e0-4221-97de-c4156b3617d3",rank.playerOrTeamId] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                NSDictionary *dic = responseObject;
-                NSDictionary *asd = dic.allKeys;
-                rank.wins = [Validator getSafeString:asd[@"profileIconId"]];
-                [self.arrRank addObject:rank];
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                [SVProgressHUD dismiss];
-            }];
+            [self.arrRank addObject:rank];
         }
         NSArray *sorted = [self.arrRank sortedArrayUsingComparator:^NSComparisonResult(id lhs, id rhs) {
             LoLListRankModel *p1 = lhs, *p2 = rhs;
@@ -75,13 +89,36 @@
                 return NSOrderedDescending;
             } return NSOrderedSame;
         }];
-        if (self.arrRank.count >0) {
-            self.arrRank = [NSMutableArray arrayWithArray:sorted];
-            [self.listRankTableview reloadData];
-        }
+        
+        self.arrRank = [NSMutableArray arrayWithArray:sorted];
+        //        for (int i=0; i<self.arrRank.count; i++) {
+        //            LoLListRankModel *rank = [self.arrRank objectAtIndex:i];
+        //            AFHTTPSessionManager *manager1 = [AFHTTPSessionManager manager];
+        //            [manager1 GET:[NSString stringWithFormat:@"https://na.api.pvp.net/api/lol/na/v1.4/summoner/%@?api_key=b531556e-a9a8-48b8-9edb-46d9276a8cd8",rank.playerOrTeamId] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        //                num = num +1;
+        //                NSDictionary *dic = responseObject;
+        //                NSString *asd = [dic.allKeys objectAtIndex:0];
+        //                NSDictionary *dicarr = responseObject[asd];
+        //                LoLListRankModel *rankID = [[LoLListRankModel alloc]init];
+        //                rankID = rank;
+        //                rankID.profileID = [Validator getSafeString:dicarr[@"profileIconId"]];
+        //                [self.arrRank replaceObjectAtIndex:i withObject:rankID];
+        //                if (num == sorted.count-1) {
+        [SVProgressHUD dismiss];
+        [self.listRankTableview reloadData];
+        //                }
+        //            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        //                [SVProgressHUD dismiss];
+        //            }];
+        //        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [SVProgressHUD dismiss];
     }];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"IndexViewController" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -126,7 +163,7 @@
         cell = (ListRankTableViewCell*)[nib objectAtIndex:0];
     }
     LoLListRankModel *rank = [self.arrRank objectAtIndex:indexPath.row];
-    [cell.avatar setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://ddragon.leagueoflegends.com/cdn/6.12.1/img/profileicon/%@.png",rank.playerOrTeamId]] placeholderImage:[UIImage imageNamed:@"img_list_placeholder"]];
+    [cell.avatar setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://ddragon.leagueoflegends.com/cdn/6.12.1/img/profileicon/%@.png",rank.profileID]] placeholderImage:[UIImage imageNamed:@"img_list_placeholder"]];
     cell.nameLabel.text = rank.playerOrTeamName;
     cell.winLabel.text = [NSString stringWithFormat:@"%@W",rank.wins];
     cell.loseLabel.text = [NSString stringWithFormat:@"%@L",rank.losses];
@@ -143,7 +180,9 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    DetailViewController *home = [UIStoryboard instantiateDetailViewController];
+    home.title = @"概要";
+    [self.navigationController pushViewController:home animated:YES];
 }
 
 - (IBAction)actionSearch:(id)sender {

@@ -10,6 +10,7 @@ static NSString * const kHomeVC = @"Home";
 static NSString * const kDetailVC = @"Detail";
 static NSString * const kDetailTab1VC = @"DetailTab1";
 static NSString * const kDetailTab2VC = @"DetailTab2";
+static NSString * const kSearchVC = @"Search";
 @implementation UIStoryboard (Home)
 
 + (UIStoryboard *)homeStoryboard{
@@ -20,16 +21,22 @@ static NSString * const kDetailTab2VC = @"DetailTab2";
     return [[self homeStoryboard] instantiateViewControllerWithIdentifier:kListChampionVC];
 }
 
-+ (ViewController *)instantiateHomeViewController{
++ (ViewController *)searchViewController{
+    return [[self homeStoryboard] instantiateViewControllerWithIdentifier:kSearchVC];
+}
+
++ (HomeViewController *)instantiateHomeViewController{
     return [[self homeStoryboard] instantiateViewControllerWithIdentifier:kHomeVC];
 }
 
 + (DetailViewController *)instantiateDetailViewController{
     return [[self homeStoryboard] instantiateViewControllerWithIdentifier:kDetailVC];
 }
+
 + (DetailTab1ViewController *)instantiateDetailTab1ViewController{
     return [[self homeStoryboard] instantiateViewControllerWithIdentifier:kDetailTab1VC];
 }
+
 + (DetailTab2ViewController *)instantiateDetailTab2ViewController{
     return [[self homeStoryboard] instantiateViewControllerWithIdentifier:kDetailTab2VC];
 }

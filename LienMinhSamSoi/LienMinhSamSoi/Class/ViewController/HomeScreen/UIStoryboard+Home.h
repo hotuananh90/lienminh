@@ -10,12 +10,13 @@
 #import "DetailViewController.h"
 #import "DetailTab1ViewController.h"
 #import "DetailTab2ViewController.h"
+#import "HomeViewController.h"
 
 @interface UIStoryboard (Home)
 + (UIStoryboard *)homeStoryboard;
 + (ListChampionViewController *)ListChampionViewController;
-+ (ViewController *)instantiateHomeViewController;
-
++ (HomeViewController *)instantiateHomeViewController;
++ (ViewController *)searchViewController;
 + (DetailViewController *)instantiateDetailViewController;
 + (DetailTab1ViewController *)instantiateDetailTab1ViewController;
 + (DetailTab2ViewController *)instantiateDetailTab2ViewController;
