@@ -68,7 +68,7 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MenuTableViewCell" owner:self options:nil];
         cell = (MenuTableViewCell*)[nib objectAtIndex:0];
     }
-    NSArray *titles = @[@"Home", @"Profile", @"Chats"];
+    NSArray *titles = @[@"Home", @"Danh sách tướng", @"Chats"];
     cell.lblName.text = titles[indexPath.row];
     if (indexPath.row%2 == 0) {
         cell.backgroundColor = [UIColor whiteColor];

@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DEMONavigationController.h"
-#import "ViewController.h"
+#import "HomeViewController.h"
 #import "MenuViewController.h"
 #import "Macro.h"
 #import "UIStoryboard+Home.h"
@@ -37,9 +37,38 @@
         [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     }
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    gCheckFirtApp = YES;
+    gDataChampion = [[NSMutableArray alloc]init];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSString *url = [NSString stringWithFormat:@"https://na.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=all&api_key=%@",KEY_API];
+    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        gVersion = [responseObject objectForKey:@"version"];
+        NSDictionary *dic = [responseObject objectForKey:@"keys"];
+        NSError *error;
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString *plistFile = @"Champion.plist";
+        NSString *path = [documentsDirectory stringByAppendingPathComponent:plistFile];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        if (![fileManager fileExistsAtPath: path])
+        {
+            NSString *bundle = [[NSBundle mainBundle] pathForResource:@"Champion" ofType:@"plist"];
+            [fileManager copyItemAtPath:bundle toPath: path error:&error];
+        }else{
+            [fileManager removeItemAtPath:path error:NULL];
+        }
+        NSMutableArray *data = [NSMutableArray arrayWithContentsOfFile:path];
+        [data addObject:dic];
+        [data writeToFile: path atomically:YES];
+        gDataChampion = data;
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CHAMPION object: nil];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
     // Create content and menu controllers
     //
-    ViewController *homeViewController = [UIStoryboard instantiateHomeViewController];
+    HomeViewController *homeViewController = [UIStoryboard instantiateHomeViewController];
     DEMONavigationController *navigationController = [[DEMONavigationController alloc] initWithRootViewController:homeViewController];
     //MenuViewController *menuController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:Nil];
     UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:[[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:Nil]];

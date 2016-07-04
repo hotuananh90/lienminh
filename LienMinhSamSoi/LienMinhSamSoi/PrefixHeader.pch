@@ -16,4 +16,6 @@
 #import "Macro.h"
 #import <AFNetworking.h>
 #import "Validator.h"
+#import "Global.h"
+#import "Common.h"
 #endif /* PrefixHeader_pch */

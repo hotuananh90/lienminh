@@ -14,6 +14,8 @@
 #import "DetailTab1ViewController.h"
 #import "DetailTab2ViewController.h"
 #import "UIStoryboard+Home.h"
+#import "LOLListTopChampionModel.h"
+
 #define RGBColorAlpha(r,g,b,f)   [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:f]
 @interface DetailViewController ()<SwipeTableViewDataSource,SwipeTableViewDelegate,UIGestureRecognizerDelegate>
 @property (nonatomic, strong) SwipeTableView * swipeTableView;
@@ -23,6 +25,9 @@
 @property (nonatomic, strong) UIImageView * tableViewHeader;
 @property (nonatomic, strong) CustomSegmentControl * segmentBar;
 @property (nonatomic, strong) NSString * actionIdentifier;
+@property (nonatomic, strong) NSMutableArray * arrTopChampion;
+@property (nonatomic) UIImageView *imageView;
+
 @end
 
 @implementation DetailViewController
@@ -31,14 +36,69 @@
     [super viewDidLoad];
     self.actionIdentifier = @"shouldHidenNavigationBar";
     // back
-    
+    _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 320)];
     // Do any additional setup after loading the view.
+    [self setup];
+    [self getdata];
+}
+
+- (void) getdata{
+    _arrTopChampion = [[NSMutableArray alloc]init];
+    [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeClear];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSString *url = [NSString stringWithFormat:@"%@%@/topchampions?count=5&api_key=%@",self.baseURL,self.lolListRankModel.playerOrTeamId,KEY_API] ;
+    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSArray *arr = responseObject;
+        for (NSDictionary *dic in arr) {
+            LOLListTopChampionModel *champion = [[LOLListTopChampionModel alloc]init];
+            champion.championId = [Validator getSafeString:dic[@"championId"]];
+            champion.championLevel = [Validator getSafeString:dic[@"championLevel"]];
+            champion.championPoints = [Validator getSafeString:dic[@"championPoints"]];
+            champion.championPointsSinceLastLevel = [Validator getSafeString:dic[@"championPointsSinceLastLevel"]];
+            champion.championPointsUntilNextLevel = [Validator getSafeString:dic[@"championPointsUntilNextLevel"]];
+            champion.chestGranted = [Validator getSafeString:dic[@"chestGranted"]];
+            champion.lastPlayTime = [Validator getSafeString:dic[@"lastPlayTime"]];
+            champion.playerId = [Validator getSafeString:dic[@"playerId"]];
+            champion.tokensEarned = [Validator getSafeString:dic[@"tokensEarned"]];
+            [_arrTopChampion addObject:champion];
+        }
+        
+        NSDictionary *dic = [gDataChampion objectAtIndex:0];
+        LOLListTopChampionModel *champion = [_arrTopChampion objectAtIndex:0];
+        NSArray *arrDic = [dic allKeys];
+        for (NSString *name in arrDic) {
+            if ([name isEqualToString:champion.championId]) {
+                NSString *strchampion = [NSString stringWithFormat:@"http://ddragon.leagueoflegends.com/cdn/img/champion/splash/%@_0.jpg",dic[name]];
+                NSURLRequest *urlReques = [NSURLRequest requestWithURL:[NSURL URLWithString:strchampion]];
+                __weak typeof(self) weakSelf = self;
+                [self.imageView setImageWithURLRequest:urlReques placeholderImage:[UIImage imageNamed:@"img_list_placeholder"] success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
+                    weakSelf.imageView.image = image;
+                    weakSelf.swipeTableView.swipeHeaderView = weakSelf.tableViewHeader;
+                    [weakSelf.swipeTableView reloadData];
+                    [SVProgressHUD dismiss];
+                } failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
+                    [SVProgressHUD dismiss];
+                }];
+                break;
+            }
+        }
+        
+        [SVProgressHUD dismiss];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
+    }];
+    
+}
+
+
+
+- (void)setup{
     self.swipeTableView = [[SwipeTableView alloc]initWithFrame:self.view.bounds];
     _swipeTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     _swipeTableView.delegate = self;
     _swipeTableView.dataSource = self;
     _swipeTableView.shouldAdjustContentSize = _shouldFitItemsContentSize;
-    _swipeTableView.swipeHeaderView = self.tableViewHeader;
+    
     _swipeTableView.swipeHeaderBar = self.segmentBar;
     if (_shouldHiddenNavigationBar) {
         _swipeTableView.swipeHeaderTopInset = 0;
@@ -101,10 +161,17 @@
 
 - (UIView *)tableViewHeader {
     if (nil == _tableViewHeader) {
+        
         UIImage * headerImage = [UIImage imageNamed:@"onepiece_kiudai"];
-        self.tableViewHeader = [[UIImageView alloc]initWithImage:headerImage];
+        self.tableViewHeader = [[UIImageView alloc]initWithImage:self.imageView.image];
         _tableViewHeader.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width * (headerImage.size.height/headerImage.size.width));
         _tableViewHeader.backgroundColor = [UIColor purpleColor];
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 80, [UIScreen mainScreen].bounds.size.width, 20)];
+        label.text = self.lolListRankModel.playerOrTeamName;
+        label.font = [UIFont boldSystemFontOfSize:14];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.textColor = [UIColor whiteColor];
+        [_tableViewHeader addSubview:label];
     }
     return _tableViewHeader;
 }

@@ -17,7 +17,6 @@
 		8450ED701D116FAA001875B6 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450EC821D116FA9001875B6 /* Global.m */; };
 		8450ED711D116FAA001875B6 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450EC851D116FA9001875B6 /* Util.m */; };
 		8450ED721D116FAA001875B6 /* Validator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450EC871D116FA9001875B6 /* Validator.m */; };
-		8450ED731D116FAA001875B6 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450EC8A1D116FA9001875B6 /* City.m */; };
 		8450ED7B1D116FAA001875B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8450EC9C1D116FA9001875B6 /* Main.storyboard */; };
 		8450ED7C1D116FAA001875B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450EC9E1D116FA9001875B6 /* ViewController.m */; };
 		8450ED831D116FAA001875B6 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8450ECAD1D116FA9001875B6 /* MenuTableViewCell.m */; };
@@ -105,6 +104,8 @@
 		CC0011051D191E6E003FFBDA /* CarbonTabSwipeSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0011011D191E6E003FFBDA /* CarbonTabSwipeSegmentedControl.m */; };
 		CC48B4751D212622000664D7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC48B4741D212622000664D7 /* HomeViewController.m */; };
 		CC48B4781D212C8F000664D7 /* CollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC48B4771D212C8F000664D7 /* CollectionReusableView.m */; };
+		CC49DDAE1D23C49200CA7EAA /* LOLListTopChampionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC49DDAD1D23C49200CA7EAA /* LOLListTopChampionModel.m */; };
+		CC49DDB01D23D31E00CA7EAA /* Champion.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC49DDAF1D23D31E00CA7EAA /* Champion.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,8 +148,6 @@
 		8450EC851D116FA9001875B6 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		8450EC861D116FA9001875B6 /* Validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Validator.h; sourceTree = "<group>"; };
 		8450EC871D116FA9001875B6 /* Validator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Validator.m; sourceTree = "<group>"; };
-		8450EC891D116FA9001875B6 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
-		8450EC8A1D116FA9001875B6 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
 		8450EC9C1D116FA9001875B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8450EC9D1D116FA9001875B6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8450EC9E1D116FA9001875B6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -299,6 +298,9 @@
 		CC48B4741D212622000664D7 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		CC48B4761D212C8F000664D7 /* CollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionReusableView.h; sourceTree = "<group>"; };
 		CC48B4771D212C8F000664D7 /* CollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionReusableView.m; sourceTree = "<group>"; };
+		CC49DDAC1D23C49200CA7EAA /* LOLListTopChampionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOLListTopChampionModel.h; sourceTree = "<group>"; };
+		CC49DDAD1D23C49200CA7EAA /* LOLListTopChampionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOLListTopChampionModel.m; sourceTree = "<group>"; };
+		CC49DDAF1D23D31E00CA7EAA /* Champion.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Champion.plist; sourceTree = "<group>"; };
 		E30CE9557FE6F75765063244 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -374,6 +376,7 @@
 				8450EC571D116EA0001875B6 /* Assets.xcassets */,
 				8450EC591D116EA0001875B6 /* LaunchScreen.storyboard */,
 				8450EC5C1D116EA0001875B6 /* Info.plist */,
+				CC49DDAF1D23D31E00CA7EAA /* Champion.plist */,
 				8450EC4B1D116EA0001875B6 /* Supporting Files */,
 			);
 			path = LienMinhSamSoi;
@@ -435,10 +438,10 @@
 		8450EC881D116FA9001875B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8450EC891D116FA9001875B6 /* City.h */,
-				8450EC8A1D116FA9001875B6 /* City.m */,
 				84EA88931D17F421008B3B9F /* LoLListRankModel.h */,
 				84EA88941D17F421008B3B9F /* LoLListRankModel.m */,
+				CC49DDAC1D23C49200CA7EAA /* LOLListTopChampionModel.h */,
+				CC49DDAD1D23C49200CA7EAA /* LOLListTopChampionModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -915,6 +918,7 @@
 				8450EDE31D116FAA001875B6 /* SWRevealViewController.zip in Resources */,
 				847A6D041D12934600AC5701 /* img_list_placeholder.png in Resources */,
 				8450ED921D116FAA001875B6 /* ic_menu.png in Resources */,
+				CC49DDB01D23D31E00CA7EAA /* Champion.plist in Resources */,
 				84E888E71D13FF0C00D2448F /* onepiece_kiudai.png in Resources */,
 				8450EDA31D116FAA001875B6 /* Endpoints.plist in Resources */,
 				8450ED9A1D116FAA001875B6 /* Icon-76@2x.png in Resources */,
@@ -1001,6 +1005,7 @@
 				8450EDA41D116FAA001875B6 /* ILA_Champion.m in Sources */,
 				8450EDDB1D116FAA001875B6 /* DEMONavigationController.m in Sources */,
 				8450EDA61D116FAA001875B6 /* ILA_CurrentGame.m in Sources */,
+				CC49DDAE1D23C49200CA7EAA /* LOLListTopChampionModel.m in Sources */,
 				8450EDE41D116FAA001875B6 /* UIView+Toast.m in Sources */,
 				8450EDA21D116FAA001875B6 /* ILA_ChampionDto.m in Sources */,
 				8450EDDC1D116FAA001875B6 /* RECommonFunctions.m in Sources */,
@@ -1046,7 +1051,6 @@
 				CC0011041D191E6E003FFBDA /* CarbonTabSwipeScrollView.m in Sources */,
 				8450EDE01D116FAA001875B6 /* UIView+REFrostedViewController.m in Sources */,
 				8450EDB91D116FAA001875B6 /* ILA_MasteryDto.m in Sources */,
-				8450ED731D116FAA001875B6 /* City.m in Sources */,
 				84E888E11D13F4FF00D2448F /* SwipeTableView.m in Sources */,
 				84E888E21D13F4FF00D2448F /* UIView+SwipeTableViewFrame.m in Sources */,
 				8450EDDF1D116FAA001875B6 /* UIImage+REFrostedViewController.m in Sources */,

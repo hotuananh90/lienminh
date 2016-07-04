@@ -10,13 +10,9 @@
 //#define BASE_URL                      @"http://54.245.83.127/tmapp/"
 #define BASE_URL                      @"http://157.7.133.212/"
 
-#define REGISTER                      @"api/register"
-#define GET_VIDEO_LINK                @"/api/getVideoLink"
-#define GET_All_VIDEO_LINK            @"/api/getAllVideoLink"
+#define KEY_API                       @"b531556e-a9a8-48b8-9edb-46d9276a8cd8"
+#define NOTIFICATION_CHAMPION         @"NOTIFICATION_CHAMPION"
 
-#define MAX_LENGTH                    20
-#define SEARCH_LIMIT                  @"21"
-#define SEARCH_START                  @"0"
 #define NAVIGATION_TEXT_COLOR                   [UIColor blackColor]
 #define SCREEN_WIDTH                                [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT                               [[UIScreen mainScreen] bounds].size.height

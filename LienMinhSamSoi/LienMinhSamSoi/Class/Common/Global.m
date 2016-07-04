@@ -10,9 +10,7 @@
 
 @implementation Global
 
-MPMoviePlayerController *gVideoController;
-NSString *deviceTokenString;
-NSMutableArray * gPush;
-BOOL IS_FULL_SCREEN=FALSE;
-BOOL IS_PLAYING=FALSE;
+NSString *gVersion;
+NSMutableArray *gDataChampion;
+BOOL gCheckFirtApp;
 @end

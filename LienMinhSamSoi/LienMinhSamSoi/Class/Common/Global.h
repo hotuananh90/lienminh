@@ -11,11 +11,8 @@
 
 @interface Global : NSObject
 
-extern MPMoviePlayerController *gVideoController;
-extern NSString *deviceTokenString;
-extern NSMutableArray* gFavoriteArr;
-extern NSMutableArray* gPush;
-extern NSData *gDataIMG;
-extern BOOL IS_FULL_SCREEN;
-extern BOOL IS_PLAYING;
+
+extern NSString *gVersion;
+extern NSMutableArray *gDataChampion;
+extern BOOL gCheckFirtApp;
 @end

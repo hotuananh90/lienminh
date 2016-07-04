@@ -48,6 +48,10 @@
     carbonTabSwipeNavigation = [[CarbonTabSwipeNavigation alloc] initWithItems:items delegate:self];
     [carbonTabSwipeNavigation insertIntoRootViewController:self];
     [self style];
+    if (gCheckFirtApp) {
+        [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeClear];
+    }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getChampion:) name:NOTIFICATION_CHAMPION object:nil];
 }
 
 - (void)setTheme{
@@ -56,6 +60,12 @@
     [revealButton addTarget:(DEMONavigationController *)self.navigationController action:@selector(showMenu) forControlEvents:UIControlEventTouchUpInside];
     self.navigationController.navigationBar.topItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:revealButton];
 }
+
+- (void)getChampion:(NSNotification *)notification {
+    gCheckFirtApp = NO;
+    [SVProgressHUD dismiss];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

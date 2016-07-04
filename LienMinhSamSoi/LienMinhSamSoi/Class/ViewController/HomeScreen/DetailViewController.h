@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoLListRankModel.h"
 
 @interface DetailViewController : UIViewController
-
+@property (nonatomic) LoLListRankModel *lolListRankModel;
+@property (nonatomic) NSString *baseURL;
 @end

@@ -16,6 +16,7 @@
 @interface ListRankViewController ()
 {
     UIButton *revealButton;
+    NSString *baseUrl;
 }
 @property (weak, nonatomic) IBOutlet UITableView *listRankTableview;
 @property (nonatomic) NSMutableArray *arrRank;
@@ -53,7 +54,7 @@
     [self.refreshControl endRefreshing];
     [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeClear];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    NSString *baseUrl;
+    
     if ([_strIndex isEqualToString:@"1"]) {
         baseUrl = @"https://kr.api.pvp.net/api/lol/kr/";
     }else if ([_strIndex isEqualToString:@"2"]){
@@ -62,7 +63,7 @@
         baseUrl = @"https://br.api.pvp.net/api/lol/br/";
     }
     
-    NSString *url = [NSString stringWithFormat:@"%@v2.5/league/challenger?type=RANKED_SOLO_5x5&api_key=b531556e-a9a8-48b8-9edb-46d9276a8cd8",baseUrl] ;
+    NSString *url = [NSString stringWithFormat:@"%@v2.5/league/challenger?type=RANKED_SOLO_5x5&api_key=%@",baseUrl,KEY_API] ;
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [self.arrRank removeAllObjects];
         NSArray *arr = responseObject[@"entries"];
@@ -180,9 +181,17 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DetailViewController *home = [UIStoryboard instantiateDetailViewController];
-    home.title = @"概要";
-    [self.navigationController pushViewController:home animated:YES];
+    LoLListRankModel *rank = [self.arrRank objectAtIndex:indexPath.row];
+    DetailViewController *detail = [UIStoryboard instantiateDetailViewController];
+    detail.lolListRankModel = rank;
+    if ([_strIndex isEqualToString:@"1"]) {
+        detail.baseURL = @"https://kr.api.pvp.net/championmastery/location/kr/player/";
+    }else if ([_strIndex isEqualToString:@"2"]){
+        detail.baseURL = @"https://na.api.pvp.net/championmastery/location/NA/player/";
+    }else{
+        detail.baseURL = @"https://br.api.pvp.net/championmastery/location/br/player/";
+    }
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 - (IBAction)actionSearch:(id)sender {

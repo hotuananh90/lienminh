@@ -16,9 +16,11 @@
 {
     UIButton *revealButton;
     NSString *version;
+    NSArray *prepTime;
 }
 @property (weak, nonatomic) IBOutlet UICollectionView *championCollectionView;
 @property (nonatomic) NSDictionary *dicChampion;
+
 @end
 
 @implementation ListChampionViewController
@@ -27,16 +29,42 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setTheme];
-    [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeClear];
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:@"https://na.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=all&api_key=2112a619-bd40-4f33-a086-cb41d67c3423" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [SVProgressHUD dismiss];
-        _dicChampion = [responseObject objectForKey:@"keys"];
-        version = [responseObject objectForKey:@"version"];
+    
+    NSError *error;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *plistFile;
+    plistFile = @"Champion.plist";
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:plistFile];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath: path])
+    {
+        NSString *bundle = [[NSBundle mainBundle] pathForResource:@"Champion" ofType:@"plist"];
+        
+        [fileManager copyItemAtPath:bundle toPath: path error:&error];
+    }
+    NSMutableArray *data = [NSMutableArray arrayWithContentsOfFile:path];
+    if (data.count >0) {
+        _dicChampion = [data objectAtIndex:0];
         [self.championCollectionView reloadData];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [SVProgressHUD dismiss];
-    }];
+    }else{
+        [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeClear];
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        NSString *url = [NSString stringWithFormat:@"https://na.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=all&api_key=%@",KEY_API];
+        [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            [SVProgressHUD dismiss];
+            _dicChampion = [responseObject objectForKey:@"keys"];
+            
+            [data addObject:_dicChampion];
+            [data writeToFile: path atomically:YES];
+            
+            gVersion = [responseObject objectForKey:@"version"];
+            [self.championCollectionView reloadData];
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            [SVProgressHUD dismiss];
+        }];
+    }
 }
 
 - (void)setTheme{
@@ -78,7 +106,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     NSString *xib = ChampionCollectionViewCellIdentifier;
     ChampionCollectionViewCell *cell = (ChampionCollectionViewCell *)[_championCollectionView dequeueReusableCellWithReuseIdentifier:xib forIndexPath:indexPath];
-    [cell.img setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://ddragon.leagueoflegends.com/cdn/%@/img/champion/%@.png",version,self.dicChampion.allValues[indexPath.row]]] placeholderImage:[UIImage imageNamed:@"img_list_placeholder"]];
+    [cell.img setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://ddragon.leagueoflegends.com/cdn/%@/img/champion/%@.png",gVersion,self.dicChampion.allValues[indexPath.row]]] placeholderImage:[UIImage imageNamed:@"img_list_placeholder"]];
     cell.nameLabel.text =self.dicChampion.allValues[indexPath.row];
     if (cell.selected) {
         cell.backgroundColor = [UIColor lightGrayColor]; // highlight selection
